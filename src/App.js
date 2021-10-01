@@ -12,8 +12,8 @@ function App() {
       <MyNavbar />
       <DropDown />
       <MyGalleries query={"avengers"}/>
-      <MyGalleries query={"harry%20potter"}/>
-      <MyGalleries query={"spiderman"}/>
+      <MyGalleries query={"harry potter"}/>
+      <MyGalleries query={"batman"}/>
       <MyFooter />
     </div>
   );

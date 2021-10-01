@@ -5,7 +5,9 @@ class MyGalleries extends Component {
 
 
     state = {
-        movies: null
+        movies: [
+
+        ]
     }
 
 
@@ -13,7 +15,6 @@ class MyGalleries extends Component {
         try {
           const response = await fetch( "http://www.omdbapi.com/?apikey=e59f0763&s=" + this.props.query);
           const data = await response.json()
-          console.log(data)
           this.setState({ movies: data })
         } catch(e) {
           console.log(e);
@@ -29,13 +30,14 @@ class MyGalleries extends Component {
         return (
             <div className=".container-fluid pl-4">
                 <h1 className="title shows-title" id="recent">
-                    Trending Now
+                    {this.props.query}
                 </h1>
                 <div className="row">
                     {
-                        /* this.state.movies.Search.map(movie => 
-                            <SingleMovies image={movie.Poster} />
-                        ) */
+                        this.state.movies.Search &&
+                        this.state.movies.Search.map((movie , i) => 
+                            <SingleMovies key={i} image={movie.Poster} />
+                        )
                     }
                 </div>
             </div>

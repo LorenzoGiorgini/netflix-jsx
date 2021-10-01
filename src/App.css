@@ -1,5 +1,8 @@
 * {
   margin: 0;
+}
+
+#root {
   background: #141414;
 }
 
@@ -172,6 +175,7 @@ body {
   margin-left: 16px;
   position: relative;
   margin-top: 100px;
+  text-transform: capitalize;
 }
 
 .col-size-style {
