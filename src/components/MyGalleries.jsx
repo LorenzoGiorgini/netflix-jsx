@@ -15,7 +15,7 @@ class MyGalleries extends Component {
     try {
       this.setState({ loading: true });
       const response = await fetch(
-        "http://www.omdbapi.co/?apikey=e59f0763&s=" + this.props.query
+        "http://www.omdbapi.com/?apikey=e59f0763&s=" + this.props.query
       );
       const data = await response.json();
       console.log(data);
@@ -24,7 +24,6 @@ class MyGalleries extends Component {
       }
     
     } catch (error) {
-
       this.setState({ errorMsg: "not found" });
     }
   };
