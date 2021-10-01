@@ -5,7 +5,6 @@ import DropDown from './components/DropDown';
 import MyGalleries from './components/MyGalleries';
 import MyFooter from './components/MyFooter';
 
-
 function App() {
   return (
     <div>

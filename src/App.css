@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+html {
+  background: #141414;
+}
+
 #root {
   background: #141414;
 }
