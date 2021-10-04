@@ -22,11 +22,6 @@ class App extends React.Component {
             placeholder="Search..."
             onChange={(e) => this.setState({ query: e.target.value })}
           />
-          {/* <input
-          type="button"
-          value="Search"
-          onClick={() => this.fetchedData()}
-        /> */}
         </div>
         {this.state.query.length > 0 ? (
           <MyGalleries query={this.state.query} />
@@ -37,7 +32,6 @@ class App extends React.Component {
             <MyGalleries query={"batman"} />
           </>
         )}
-
         <MyFooter />
       </div>
     );

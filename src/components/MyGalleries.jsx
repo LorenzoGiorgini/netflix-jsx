@@ -5,11 +5,17 @@ import Alert from "react-bootstrap/Alert";
 
 class MyGalleries extends Component {
   state = {
-    movies: [],
-    
+    movies: [
+
+    ],
     loading: false,
     errorMsg: ""
   };
+
+  setterOfInput = (obj) => {
+    this.setState(obj)
+  }
+
 
   fetchedData = async () => {
     try {
@@ -43,7 +49,7 @@ class MyGalleries extends Component {
       <>
         <div className=".container-fluid pl-4">
           <h1 className="title shows-title" id="recent">
-            {this.state.query}
+            {this.props.query}
           </h1>
           <div className="row">
             {this.state.errorMsg && (
