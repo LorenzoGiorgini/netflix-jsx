@@ -266,3 +266,13 @@ a {
   height: 400px;
   object-fit: cover;
 }
+
+.spacer {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+}
+
+.spinner-center {
+  margin: auto;
+}

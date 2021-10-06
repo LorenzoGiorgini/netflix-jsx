@@ -68,11 +68,12 @@ const MyGalleries = (props) => {
               Cannot load the data: {errorMsg}
             </Alert>
           )}
-          {loading && <MySpinner />}
+          {loading && <MySpinner/>}
           {
             movies.map((movie, i) => (
               <SingleMovies key={i} data={movie} />
-            ))}
+            ))
+          }
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
 import { useEffect , useState } from "react";
 import MySpinner from "../components/MySpinner";
 import Alert from "react-bootstrap/Alert";
-import { Badge, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
+import { Badge, Card, Col, Container, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 
 const MovieDetails = ({ match }) => {
 
@@ -62,11 +62,20 @@ const MovieDetails = ({ match }) => {
 
 
     return (
-
-        movieChosen !== null &&
+        //if
+        movieChosen === null ?
+        (
+            <div className="spacer">
+                {
+                    loading && <MySpinner className="spinner-center"/>
+                }
+            </div> 
+        ) 
+        :  //else
+        (
         <Container>
             <Row>
-                <Col>
+                
                     <Card className="card-movie-details">
                         <Card.Img className="img-styled" variant="top" src={movieChosen.Poster} />
                         <Card.Body>
@@ -86,10 +95,17 @@ const MovieDetails = ({ match }) => {
                             </ListGroup>
                         </Card.Body>
                     </Card>
-                </Col>
+                    <ListGroup style={{marginTop: "200px", marginLeft: "100px" , width: "300px"}}>
+                        {
+                            comments !== null &&
+                            comments.map((comment) => (
+                                <ListGroup.Item >{comment.comment}</ListGroup.Item>
+                            ))
+                        }
+                    </ListGroup> 
             </Row>
         </Container>
-
+        )
     )
 
 
