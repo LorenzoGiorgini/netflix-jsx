@@ -26,6 +26,7 @@ const MyGalleries = (props) => {
       );
       const data = await response.json();
       if(data.Search) {
+        console.log(data)
         setMovies(data.Search)
         setLoader(false)
         setErrorMsg("")
@@ -70,7 +71,7 @@ const MyGalleries = (props) => {
           {loading && <MySpinner />}
           {
             movies.map((movie, i) => (
-              <SingleMovies key={i} image={movie.Poster} />
+              <SingleMovies key={i} data={movie} />
             ))}
         </div>
       </div>

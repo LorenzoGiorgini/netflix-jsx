@@ -1,45 +1,32 @@
-import { useState } from "react";
+//React modules
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+//Styling
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+//Components
 import MyNavbar from "./components/MyNavbar";
-import DropDown from "./components/DropDown";
-import MyGalleries from "./components/MyGalleries";
 import MyFooter from "./components/MyFooter";
-import React from "react";
+import MovieDetails from "./views/MovieDetails";
+import Home from "./views/Home";
 
 const App = () => {
   /* state = {
     query: "",
   }; */
 
-  const [query , setQuery] = useState("")
-
-  
   return (
     <div>
-      <MyNavbar />
-      <DropDown />
-      <div>
-        <input
-          type="text"
-          placeholder="Search..."
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      </div>
-      {query.length > 0 ? (
-        <MyGalleries query={query} />
-      ) : (
-        <>
-          <MyGalleries query={"avengers"} />
-          <MyGalleries query={"harry potter"} />
-          <MyGalleries query={"batman"} />
-        </>
-      )}
-      <MyFooter />
+      <Router>
+        <MyNavbar />
+        <Route path="/" exact={true} component={Home} />
+        <Route path="/details/:id" component={MovieDetails} />
+        <MyFooter />
+      </Router>
     </div>
   );
-
-}
-
+};
 
 export default App;
