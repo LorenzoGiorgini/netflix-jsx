@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MyNavbar from "./components/MyNavbar";
@@ -6,36 +7,39 @@ import MyGalleries from "./components/MyGalleries";
 import MyFooter from "./components/MyFooter";
 import React from "react";
 
-class App extends React.Component {
-  state = {
+const App = () => {
+  /* state = {
     query: "",
-  };
+  }; */
 
-  render() {
-    return (
+  const [query , setQuery] = useState("")
+
+  
+  return (
+    <div>
+      <MyNavbar />
+      <DropDown />
       <div>
-        <MyNavbar />
-        <DropDown />
-        <div>
-          <input
-            type="text"
-            placeholder="Search..."
-            onChange={(e) => this.setState({ query: e.target.value })}
-          />
-        </div>
-        {this.state.query.length > 0 ? (
-          <MyGalleries query={this.state.query} />
-        ) : (
-          <>
-            <MyGalleries query={"avengers"} />
-            <MyGalleries query={"harry potter"} />
-            <MyGalleries query={"batman"} />
-          </>
-        )}
-        <MyFooter />
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={(e) => setQuery(e.target.value)}
+        />
       </div>
-    );
-  }
+      {query.length > 0 ? (
+        <MyGalleries query={query} />
+      ) : (
+        <>
+          <MyGalleries query={"avengers"} />
+          <MyGalleries query={"harry potter"} />
+          <MyGalleries query={"batman"} />
+        </>
+      )}
+      <MyFooter />
+    </div>
+  );
+
 }
+
 
 export default App;
