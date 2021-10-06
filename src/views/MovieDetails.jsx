@@ -70,7 +70,7 @@ const MovieDetails = ({ match }) => {
                     <Card className="card-movie-details">
                         <Card.Img className="img-styled" variant="top" src={movieChosen.Poster} />
                         <Card.Body>
-                            <Card.Title>{movieChosen.Title}</Card.Title>
+                            <Card.Title className="title-details">{movieChosen.Title}</Card.Title>
                             <Card.Text className="text-dotted-ovf">
                                 {
                                     movieChosen.Plot
@@ -78,7 +78,7 @@ const MovieDetails = ({ match }) => {
                             </Card.Text>
                             <Badge>
                                 {
-                                    movieChosen.Title
+                                    movieChosen.imdbRating
                                 }
                             </Badge>
                             <ListGroup>

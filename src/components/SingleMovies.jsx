@@ -7,7 +7,7 @@ const SingleMovies = (props) => (
       <Link to={'/details/' + props.data.imdbID}>            
         <img
           src={props.data.Poster}
-          className="card-img-top img-netflix-movies img-fluid w-100 rounded"
+          className="card-img-top img-netflix-movies"
         />
       </Link>
     </div>
