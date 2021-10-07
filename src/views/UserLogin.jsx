@@ -15,14 +15,15 @@ const UserLogin = () => {
     })
 
 
+    const checkIfFormIsCompleted = () => user.name.length >= 3 && user.surname.length >= 3 && user.email.length >= 5 && user.password.length >= 8 && user.confirmPassword === user.password
+
+
     return(
         <>
-        {console.log(user.name)}
         <div className="spacer">
             <Row style={{marginTop: "100px" , color: "white"}}>
                 <Col>
                     <Form>
-                        
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Name</Form.Label>
                             <Form.Control 
@@ -73,9 +74,10 @@ const UserLogin = () => {
                             />
                         </Form.Group>
                         
-                        <Button variant="primary" type="submit" onClick={(e) => e.preventDefault()}>
+                        <Button variant="primary" type="submit" disabled={!checkIfFormIsCompleted()} onClick={(e) => e.preventDefault()}>
                             Submit
                         </Button>
+                        
                     </Form>
                 </Col>
             </Row>
