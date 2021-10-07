@@ -269,10 +269,30 @@ a {
 
 .spacer {
   display: flex;
-  height: 90vh;
+  justify-content: center;
+  height: 75vh;
   width: 100%;
 }
 
 .spinner-border {
   margin: auto!important;
+}
+
+.dropdown {
+  background: transparent;
+}
+
+#login-btn {
+  background-color: transparent;
+  border: transparent;
+}
+
+#login-btn:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.btn:focus {
+  box-shadow: none;
 }

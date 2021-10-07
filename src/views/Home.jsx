@@ -1,21 +1,13 @@
-import React, { useState } from "react";
 import DropDown from "../components/DropDown";
 import MyGalleries from "../components/MyGalleries";
 
-const Home = () => {
-  const [query, setQuery] = useState("");
+const Home = (props) => {
+
   return (
     <>
       <DropDown />
-      <div>
-        <input
-          type="text"
-          placeholder="Search..."
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      </div>
-      {query.length > 0 ? (
-        <MyGalleries query={query} />
+      {props.query.length > 0 ? (
+        <MyGalleries query={props.query} />
       ) : (
         <>
           <MyGalleries query={"avengers"} />

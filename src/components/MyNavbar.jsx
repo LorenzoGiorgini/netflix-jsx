@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
 import logo from "../img/avatar.png"
 import netflixlogo from "../img/netflix_logo.png"
+import Dropdown from "react-bootstrap/esm/Dropdown"
 
-const MyNavbar = () => {
+const MyNavbar = (props) => {
     
     return(
     <div className="container-fluid">
@@ -51,6 +52,13 @@ const MyNavbar = () => {
                 </a>
                 </li>
             </ul>
+            <div>
+                <input
+                type="text"
+                placeholder="Search..."
+                onChange={(e) => props.setQuery(e.target.value)}
+                />
+            </div>
             <div className="search-icon">
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -76,18 +84,17 @@ const MyNavbar = () => {
                 <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                 </svg>
             </div>
-            <div className="dropdown">
-                <button
-                className="btn dropdown-toggle-new profile-button profile-button"
-                type="button"
-                id="dropdownMenu2"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >
-                <img src={logo}  alt=""  id="profile-image" />
-                </button>
-            </div>
+                <Dropdown>
+                    <Dropdown.Toggle id="login-btn">
+                        <img src={logo}  alt=" "  id="profile-image" />
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        <Link to={"/login"}>
+                            <h6 style={{textAlign: "center" , textDecoration: "none"}}>Login</h6>
+                        </Link>
+                    </Dropdown.Menu>
+                </Dropdown>
             </div>
         </nav>
     </div>

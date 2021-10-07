@@ -4,11 +4,9 @@ import Alert from "react-bootstrap/Alert";
 import {
   Badge,
   Card,
-  Col,
   Container,
   ListGroup,
-  ListGroupItem,
-  Row,
+  Row
 } from "react-bootstrap";
 
 const MovieDetails = ({ match }) => {
