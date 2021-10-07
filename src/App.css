@@ -273,6 +273,6 @@ a {
   width: 100%;
 }
 
-.spinner-center {
-  margin: auto;
+.spinner-border {
+  margin: auto!important;
 }

@@ -1,7 +1,7 @@
 import Spinner from "react-bootstrap/Spinner"
 
 const MySpinner = () => (
-    <Spinner animation="border" />
+    <Spinner animation="border" variant="primary" />
 )
 
 
