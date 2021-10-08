@@ -22,7 +22,7 @@ const App = () => {
     <div>
       <Router>
         <MyNavbar query={query} setQuery={setQuery} />
-        <Route path="/" exact={true} render={(routerProps) => <Home {...routerProps} query={query} setQuery={setQuery} />} />
+        <Route path="/" exact render={(routerProps) => <Home {...routerProps} query={query} setQuery={setQuery} />} />
         <Route path="/details/:id" component={MovieDetails} />
         <Route path="/login" component={UserLogin} />
         <MyFooter />

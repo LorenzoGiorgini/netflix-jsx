@@ -4,14 +4,6 @@ import MySpinner from "./MySpinner";
 import Alert from "react-bootstrap/Alert";
 
 const MyGalleries = (props) => {
-  /* state = {
-    movies: [
-
-    ],
-    loading: false,
-    errorMsg: ""
-  }; */
-
 
   const [movies , setMovies] = useState([])
   const [loading , setLoader] = useState(false)
